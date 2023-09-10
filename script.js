@@ -65,4 +65,5 @@ function touchGrass(e) {
 
 window.onload = function() {
   document.body.addEventListener("mousemove", touchGrass);
+  document.body.addEventListener("touchmove", touchGrass);
 }
