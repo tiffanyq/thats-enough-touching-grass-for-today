@@ -1,0 +1,71 @@
+html {
+  font-family: 'Lora', serif;
+  height: 100%;
+  background-attachment: fixed;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+video {
+  outline: unset;
+}
+
+button {
+  font-size: 18px;
+  background-color: #fff;
+  border: 1px solid #def0d9;
+  font-family: 'Lora', serif;
+  padding: 8px 24px;
+  z-index: 10;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #def0d9;
+}
+
+#sound {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+}
+
+#button-container {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button + button {
+  margin-left: 12px;
+}
+
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.message {
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+  background-color: #23361d;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: 3s ease-in-out 0s 1 FadeOut;
+	animation-fill-mode: both;
+}
