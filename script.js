@@ -29,7 +29,7 @@ function youAreAlreadyHere() {
 }
 
 // hearts
-const HEART_COLORS = ["💚", "💛"];
+const HEART_COLOR = "💚";
 const BASE_SIZE = 12;
 const MAX_ADDITIONAL_SIZE = 24;
 const BASE_TIMEOUT = 100;
@@ -39,7 +39,6 @@ class Heart {
   constructor(e) {
     this.x = e.clientX;
     this.y = e.clientY;
-    this.heartColor = HEART_COLORS[Math.floor(Math.random() * HEART_COLORS.length)];
     this.size = BASE_SIZE + Math.floor(Math.random() * MAX_ADDITIONAL_SIZE);
     this.timeout = BASE_TIMEOUT + Math.floor(Math.random() * MAX_ADDITIONAL_TIMEOUT);
   }
@@ -47,7 +46,7 @@ class Heart {
   render() {
     const b = document.body;
     const heartElement = document.createElement("div");
-    heartElement.innerText = this.heartColor;
+    heartElement.innerText = HEART_COLOR;
     heartElement.style.position = "fixed";
     heartElement.style.fontSize =  this.size + "px";
     heartElement.style.left = this.x.toString() + "px";
