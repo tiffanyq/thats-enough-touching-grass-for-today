@@ -36,9 +36,9 @@ const BASE_TIMEOUT = 100;
 const MAX_ADDITIONAL_TIMEOUT = 1400;
 
 class Heart {
-  constructor(e) {
-    this.x = e.clientX;
-    this.y = e.clientY;
+  constructor(x,y) {
+    this.x = x;
+    this.y = y;
     this.size = BASE_SIZE + Math.floor(Math.random() * MAX_ADDITIONAL_SIZE);
     this.timeout = BASE_TIMEOUT + Math.floor(Math.random() * MAX_ADDITIONAL_TIMEOUT);
   }
@@ -59,11 +59,20 @@ class Heart {
 }
 
 function touchGrass(e) {
-  const h = new Heart(e);
+  const x = e.clientX;
+  const y = e.clientY;
+  const h = new Heart(x,y);
+  h.render();
+}
+
+function touchGrassTouchInteraction(e) {
+  const x = e.touches[0].clientX;
+  const y = e.touches[0].clientY;
+  const h = new Heart(x, y);
   h.render();
 }
 
 window.onload = function() {
   document.body.addEventListener("mousemove", touchGrass);
-  document.body.addEventListener("touchmove", touchGrass);
+  document.body.addEventListener("touchmove", touchGrassTouchInteraction);
 }
